@@ -191,6 +191,5 @@ def _get_interpolation_value(inputs, x_idx, y_idx, num_batches, input_height, in
     value_sampled = tf.gather(inputs_flat, sampling_idx)
     value_sampled_formatted = tf.reshape(value_sampled, [num_batches, output_height, output_width, num_channels])
 
-    # the input image is uint8 format
-    return tf.cast(value_sampled_formatted, 'float32')
+    return value_sampled_formatted
 
